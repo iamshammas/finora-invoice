@@ -1,10 +1,9 @@
 from django.db import models
-import datetime
 # Create your models here.
 
 class Invoice(models.Model):
     customer_name = models.CharField(max_length=150)
-    date = models.DateTimeField(default=datetime.date.today)
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.customer_name
