@@ -10,11 +10,13 @@ class Invoice(models.Model):
         return self.customer_name
     
 class InvoiceItem(models.Model):
+    
     invoice = models.ForeignKey(Invoice,on_delete=models.CASCADE)
     product_name = models.CharField(max_length=350)
     qty = models.IntegerField()
     unit_price = models.IntegerField()
     total_amount = models.IntegerField(blank=True)
+    dates = models.DateTimeField(auto_now_add=True)
     
     def save(self,*args, **kwargs):
         self.total_amount = self.qty * self.unit_price

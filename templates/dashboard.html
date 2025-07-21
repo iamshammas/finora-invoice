@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice History</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            border: 2px solid black;
+            border-radius: 5px;
+            margin-top: 80px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>Invoice History</h2>
+    <div class="container">
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>AMOUNT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>test id</td>
+                        <td>user.customer_name</td>
+                        <td>user.customer_grandtotal</td>
+                    </tr>
+                    {% for user in Invoice %}
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.customer_name}}</td>
+                        <td>{{user.customer_grandtotal}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
