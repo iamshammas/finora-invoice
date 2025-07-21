@@ -3,6 +3,7 @@ from django.db import models
 
 class Invoice(models.Model):
     customer_name = models.CharField(max_length=150)
+    customer_number = models.IntegerField(null=True,blank=True)
     date = models.DateTimeField(auto_now_add=True)
     grand_total = models.IntegerField(blank=True,null=True)
 
